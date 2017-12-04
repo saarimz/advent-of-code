@@ -1,4 +1,6 @@
-//http://adventofcode.com/2017/day/1
+// http://adventofcode.com/2017/day/1
+
+// part one
 
 function findpairs(n) {
   arr = n.replace(/\D/g, '0').split('').map(Number);
@@ -17,3 +19,4 @@ function findpairs(n) {
   },0);
 }
 
+// part two 
