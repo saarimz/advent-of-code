@@ -5,8 +5,8 @@
 // part one
 
 function findpairs(n) {
-  arr = n.replace(/\D/g, '0').split('').map(Number);
-  pairs_arr = arr.map( (val,index,arr) => {
+  const arr = n.replace(/\D/g, '0').split('').map(Number);
+  const pairs_arr = arr.map( (val,index,arr) => {
     if (index == arr.length - 1) {
       return [val,arr[0]];
     } else {
@@ -24,16 +24,16 @@ function findpairs(n) {
 // part two 
 
 function findpairs_2(n) {
-  arr = n.replace(/\D/g, '0').split('').map(Number);
-  shift = arr.length / 2;
-  pairs_arr = arr.map( (val,index,arr) => {
+  const arr = n.replace(/\D/g, '0').split('').map(Number);
+  const shift = arr.length / 2;
+  const pairs_arr = arr.map( (val,index,arr) => {
     if ((index + shift) >= arr.length) {
       return [val,arr[((index + shift - arr.length))]];
     } else {
       return [val,arr[index + shift]];
     }
   });
-  result = pairs_arr.reduce((acc,val) => {
+  const result = pairs_arr.reduce((acc,val) => {
     if (val[0] === val[1]) {
       acc += val[0];
     }
