@@ -1,5 +1,7 @@
 // http://adventofcode.com/2017/day/1
 
+//NOTE: BOTH FUNCTIONS EXPECT A INPUT OF TYPE STRING
+
 // part one
 
 function findpairs(n) {
@@ -20,3 +22,22 @@ function findpairs(n) {
 }
 
 // part two 
+
+function findpairs_2(n) {
+  arr = n.replace(/\D/g, '0').split('').map(Number);
+  shift = arr.length / 2;
+  pairs_arr = arr.map( (val,index,arr) => {
+    if ((index + shift) >= arr.length) {
+      return [val,arr[((index + shift - arr.length))]];
+    } else {
+      return [val,arr[index + shift]];
+    }
+  });
+  result = pairs_arr.reduce((acc,val) => {
+    if (val[0] === val[1]) {
+      acc += val[0];
+    }
+    return acc;
+  },0);
+  return result;
+}
