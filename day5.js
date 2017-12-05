@@ -7,7 +7,7 @@ function count_steps(input_arr) {
   let steps = 0;
   let current_index = 0;
   while ((current_index < input_arr.length) && (current_index >= 0)) {
-    let move = input_arr[current_index]
+    let move = input_arr[current_index];
     input_arr[current_index] += 1;
     current_index += move;
     steps++;
